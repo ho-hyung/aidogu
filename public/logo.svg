@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 48" fill="none">
+  <!-- AI icon circle -->
+  <circle cx="24" cy="24" r="22" fill="#2563EB"/>
+  <circle cx="24" cy="24" r="22" fill="url(#grad)" />
+  <!-- Wrench/tool icon inside circle -->
+  <path d="M30.5 14.5a6.5 6.5 0 0 0-6.2 4.5h-1.6l-3.2-3.2a1 1 0 0 0-1.4 0l-1.4 1.4a1 1 0 0 0 0 1.4L19.9 21h-1.4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5.8a6.5 6.5 0 1 0 6.2-10.5zm0 11a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z" fill="white" opacity="0.95"/>
+  <!-- Sparkle dots for AI feel -->
+  <circle cx="14" cy="14" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="34" cy="34" r="1" fill="white" opacity="0.4"/>
+  <!-- Text: AIDogu -->
+  <text x="56" y="33" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#111827">
+    <tspan fill="#2563EB">AI</tspan><tspan fill="#111827">Dogu</tspan>
+  </text>
+  <defs>
+    <linearGradient id="grad" x1="2" y1="2" x2="46" y2="46">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+</svg>
