@@ -7,6 +7,8 @@ import { getOgImageUrl } from '@/lib/og'
 import { getCategoryMeta } from '@/lib/tools'
 import { ToolCard } from '@/components/tool/ToolCard'
 import { Breadcrumb } from '@/components/common/Breadcrumb'
+import { AffiliateLink } from '@/components/common/AffiliateLink'
+import { AffiliateDisclosure } from '@/components/common/AffiliateDisclosure'
 
 interface ToolPageProps {
   params: Promise<{ slug: string }>
@@ -133,16 +135,20 @@ export default async function ToolPage({ params }: ToolPageProps) {
         <aside className="space-y-6">
           {/* CTA */}
           <div className="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
-            <a
+            <AffiliateLink
               href={tool.affiliateUrl ?? tool.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              isAffiliate={!!tool.affiliateUrl}
+              toolName={tool.name}
+              sourcePage={`/tools/${tool.slug}`}
               className="block w-full rounded-lg bg-blue-600 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-blue-700"
             >
               {tool.name} 바로가기
-            </a>
+            </AffiliateLink>
             <p className="mt-2 text-center text-xs text-gray-500 dark:text-gray-400">공식 사이트로 이동합니다</p>
           </div>
+          {tool.affiliateUrl && (
+            <AffiliateDisclosure />
+          )}
 
           {/* Info */}
           <div className="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">

@@ -1,28 +1,8 @@
-import type { Metadata } from 'next'
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 import { getAllBlogPosts, getAllBlogCategories } from '@/lib/blog'
-import { SITE_CONFIG } from '@/lib/constants'
-import { getOgImageUrl } from '@/lib/og'
-
-const PAGE_TITLE = 'AI 블로그 - AI 도구 활용 가이드 & 비교 분석'
-const PAGE_DESCRIPTION = 'AI 도구 사용법, 비교 분석, 활용 가이드를 한국어로 제공합니다. AI 초보자부터 전문가까지 유용한 정보를 확인하세요.'
-
-export const metadata: Metadata = {
-  title: PAGE_TITLE,
-  description: PAGE_DESCRIPTION,
-  openGraph: {
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
-    url: `${SITE_CONFIG.url}/blog`,
-    images: [{ url: getOgImageUrl(PAGE_TITLE, PAGE_DESCRIPTION), width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
-    images: [getOgImageUrl(PAGE_TITLE, PAGE_DESCRIPTION)],
-  },
-}
 
 function CategoryBadge({ category }: { readonly category: string }) {
   return (
@@ -69,9 +49,15 @@ function BlogPostCard({ slug, title, description, category, tags, publishedAt }:
   )
 }
 
+const ALL_POSTS = getAllBlogPosts()
+const ALL_CATEGORIES = getAllBlogCategories()
+
 export default function BlogPage() {
-  const posts = getAllBlogPosts()
-  const categories = getAllBlogCategories()
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+
+  const filteredPosts = selectedCategory
+    ? ALL_POSTS.filter((post) => post.category === selectedCategory)
+    : ALL_POSTS
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
@@ -81,18 +67,35 @@ export default function BlogPage() {
       </p>
 
       <div className="mb-8 flex flex-wrap gap-2">
-        {categories.map((category) => (
-          <span
+        <button
+          type="button"
+          onClick={() => setSelectedCategory(null)}
+          className={`rounded-full border px-3 py-1 text-sm transition-colors ${
+            selectedCategory === null
+              ? 'border-blue-600 bg-blue-600 text-white'
+              : 'border-gray-200 text-gray-600 hover:border-blue-300 dark:border-gray-700 dark:text-gray-400'
+          }`}
+        >
+          전체
+        </button>
+        {ALL_CATEGORIES.map((category) => (
+          <button
+            type="button"
             key={category}
-            className="rounded-full border border-gray-200 px-3 py-1 text-sm text-gray-600 dark:border-gray-700 dark:text-gray-400"
+            onClick={() => setSelectedCategory(category)}
+            className={`rounded-full border px-3 py-1 text-sm transition-colors ${
+              selectedCategory === category
+                ? 'border-blue-600 bg-blue-600 text-white'
+                : 'border-gray-200 text-gray-600 hover:border-blue-300 dark:border-gray-700 dark:text-gray-400'
+            }`}
           >
             {category}
-          </span>
+          </button>
         ))}
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {posts.map((post) => (
+        {filteredPosts.map((post) => (
           <BlogPostCard
             key={post.slug}
             slug={post.slug}
@@ -104,6 +107,12 @@ export default function BlogPage() {
           />
         ))}
       </div>
+
+      {filteredPosts.length === 0 && (
+        <p className="py-12 text-center text-gray-500 dark:text-gray-400">
+          해당 카테고리의 글이 없습니다.
+        </p>
+      )}
     </div>
   )
 }

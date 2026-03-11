@@ -15,6 +15,7 @@ export const grammarly: Tool = {
     { name: 'Business', price: '$15/월/인', features: ['팀 기능', '스타일 가이드'] },
   ],
   url: 'https://grammarly.com',
+  affiliateUrl: 'https://grammarly.com?ref=aidogu',
   screenshots: [],
   pros: [
     '영문 교정 정확도가 매우 높음',

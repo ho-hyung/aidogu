@@ -15,6 +15,7 @@ export const elevenlabs: Tool = {
     { name: 'Creator', price: '$22/월', features: ['월 100,000자', '음성 클로닝 30개'] },
   ],
   url: 'https://elevenlabs.io',
+  affiliateUrl: 'https://elevenlabs.io?ref=aidogu',
   screenshots: [],
   pros: [
     '업계 최고 수준의 음성 품질',

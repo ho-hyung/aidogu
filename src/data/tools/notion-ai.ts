@@ -13,6 +13,7 @@ export const notionAi: Tool = {
     { name: 'AI 애드온', price: '$10/월/인', features: ['Notion 구독에 추가', 'AI 글쓰기', '요약', '번역'] },
   ],
   url: 'https://notion.so/product/ai',
+  affiliateUrl: 'https://notion.so/product/ai?ref=aidogu',
   screenshots: [],
   pros: [
     'Notion 문서와 완벽한 연동',

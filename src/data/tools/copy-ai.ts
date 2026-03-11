@@ -15,6 +15,7 @@ export const copyAi: Tool = {
     { name: 'Advanced', price: '$186/월', features: ['워크플로우 자동화', 'API 접근'] },
   ],
   url: 'https://copy.ai',
+  affiliateUrl: 'https://copy.ai?via=aidogu',
   screenshots: [],
   pros: [
     '무료 플랜 제공',

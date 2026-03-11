@@ -6,10 +6,13 @@ export const aiToolsForStudents: BlogPost = {
   description: '학생들이 공부, 과제, 시험 준비에 AI를 효과적으로 활용하는 방법을 소개합니다. 무료 AI 도구 추천과 올바른 사용법 가이드.',
   category: '활용법',
   tags: ['학생', 'AI 학습', '공부', '과제', '교육'],
+  relatedTools: ['chatgpt', 'claude', 'perplexity', 'deepl', 'grammarly'],
   publishedAt: '2025-02-12',
   updatedAt: '2025-03-01',
   content: `
 <p>AI 기술의 발전은 교육 분야에도 큰 변화를 가져오고 있습니다. 학생들은 이제 AI를 활용하여 더 효율적으로 학습하고, 복잡한 개념을 쉽게 이해하며, 과제의 질을 높일 수 있습니다. 이 글에서는 학생들이 AI를 올바르게 활용하는 구체적인 방법을 소개합니다.</p>
+
+<div class="info-box"><p><strong>핵심 포인트:</strong> AI를 학습에 활용하는 핵심은 <strong>답을 얻는 것이 아니라 이해를 깊게 하는 것</strong>입니다. "정답이 뭐야?"가 아니라 "왜 이런 답이 나오는지 설명해 줘"라고 질문하는 습관이 학습 효과를 극대화합니다.</p></div>
 
 <h2>AI를 학습에 활용하는 방법</h2>
 
@@ -20,7 +23,6 @@ export const aiToolsForStudents: BlogPost = {
   <li><strong>"이 개념을 일상생활 예시로 설명해 줘"</strong> - 추상적인 개념을 쉽게 이해할 수 있습니다</li>
   <li><strong>"이 문제를 단계별로 풀어 줘"</strong> - 풀이 과정을 하나씩 따라갈 수 있습니다</li>
 </ul>
-<p>핵심은 단순히 답을 묻는 것이 아니라, <strong>이해하기 위해 질문하는 것</strong>입니다. "왜 이런 답이 나오는지 설명해 줘"라고 추가 질문하면 학습 효과가 더 높아집니다.</p>
 
 <h3>2. 학습 자료 요약하기</h3>
 <p>긴 교과서 내용이나 논문을 AI에게 요약해 달라고 하면 핵심 내용을 빠르게 파악할 수 있습니다.</p>
@@ -48,7 +50,8 @@ export const aiToolsForStudents: BlogPost = {
   <li>다양한 관점과 논쟁점 정리</li>
   <li>참고 문헌이나 자료 방향 추천</li>
 </ul>
-<p><strong>주의:</strong> AI가 제시하는 참고 문헌은 실제로 존재하지 않는 경우가 있습니다. 반드시 직접 확인하세요.</p>
+
+<div class="warning-box"><p><strong>주의:</strong> AI가 제시하는 참고 문헌은 실제로 존재하지 않는 경우가 많습니다. AI는 그럴듯한 저자명, 논문 제목, 출판 연도를 만들어 내기도 합니다. 반드시 Google Scholar 등을 통해 직접 확인하세요.</p></div>
 
 <h3>2. 글쓰기 구조 잡기</h3>
 <p>보고서나 에세이의 전체 구조를 잡는 데 AI의 도움을 받을 수 있습니다.</p>
@@ -68,20 +71,9 @@ export const aiToolsForStudents: BlogPost = {
 
 <h2>학생에게 추천하는 무료 AI 도구</h2>
 
-<h3>ChatGPT (무료 버전)</h3>
-<p>가장 범용적인 AI 도구로, 거의 모든 과목의 질문에 대응할 수 있습니다. 수학 문제 풀이, 언어 학습, 개념 설명 등 다양한 용도로 활용 가능합니다.</p>
+<div class="comparison-grid"><div class="comparison-card"><h4>ChatGPT</h4><p class="price">무료</p><p>가장 범용적인 AI 도구. 수학 문제 풀이, 언어 학습, 개념 설명 등 거의 모든 과목에 대응 가능합니다.</p></div><div class="comparison-card"><h4>Claude</h4><p class="price">무료</p><p>긴 텍스트 분석에 강점. 논문 읽기나 긴 자료 요약에 특히 유용하며 정확한 답변을 제공합니다.</p></div><div class="comparison-card"><h4>NotebookLM</h4><p class="price">무료</p><p>Google의 AI 학습 도구. 교과서나 강의 노트를 업로드하면 해당 자료 기반으로 질문에 답해 줍니다.</p></div><div class="comparison-card"><h4>Perplexity AI</h4><p class="price">무료</p><p>AI 기반 검색 엔진. 여러 출처의 정보를 종합하여 답변하며, 참고 출처도 함께 제시합니다.</p></div></div>
 
-<h3>Claude (무료 버전)</h3>
-<p>긴 텍스트 분석에 강점이 있어 논문 읽기나 긴 자료 요약에 특히 유용합니다. 정확한 답변을 제공하려 노력하여 학습 목적에 적합합니다.</p>
-
-<h3>NotebookLM</h3>
-<p>Google이 개발한 AI 학습 도구로, 자신의 학습 자료를 업로드하면 해당 자료를 기반으로 질문에 답해 줍니다. 교과서나 강의 노트를 업로드하여 활용할 수 있습니다.</p>
-
-<h3>Perplexity AI</h3>
-<p>AI 기반 검색 엔진으로, 질문에 대해 여러 출처의 정보를 종합하여 답변합니다. 참고 출처도 함께 제시하여 리서치에 매우 유용합니다.</p>
-
-<h3>DeepL / Papago</h3>
-<p>외국어 학습과 번역에 특화된 AI 도구입니다. 영어 원서나 논문을 읽을 때 문맥에 맞는 자연스러운 번역을 제공합니다.</p>
+<div class="tool-highlight"><h4>DeepL / Papago</h4><p>외국어 학습과 번역에 특화된 AI 도구입니다. 영어 원서나 논문을 읽을 때 문맥에 맞는 자연스러운 번역을 제공합니다. DeepL은 학술적 텍스트 번역에, Papago는 일상적인 한영 번역에 각각 강점이 있습니다.</p></div>
 
 <h2>AI 사용 시 지켜야 할 윤리 기준</h2>
 <p>AI를 학습에 활용할 때 반드시 지켜야 할 원칙이 있습니다.</p>
@@ -111,9 +103,8 @@ export const aiToolsForStudents: BlogPost = {
   <li><strong>과제 시</strong> - 구조 잡기와 리서치에 AI 활용 후 직접 작성</li>
 </ol>
 
-<h2>마무리</h2>
-<p>AI는 학습을 대체하는 도구가 아니라, 학습을 도와주는 강력한 보조 도구입니다. 올바르게 활용하면 학습 효율을 크게 높일 수 있지만, AI에 지나치게 의존하면 오히려 실력이 떨어질 수 있습니다.</p>
-<p>가장 중요한 것은 <strong>AI를 통해 이해하고, 이해한 내용을 자신의 것으로 만드는 과정</strong>입니다. AI를 현명하게 활용하여 더 효과적인 학습을 시작해 보세요.</p>
+<div class="verdict-box"><h3>AI 학습의 핵심 원칙</h3><p>AI는 학습을 대체하는 도구가 아니라, 학습을 도와주는 강력한 보조 도구입니다. 가장 중요한 것은 <strong>AI를 통해 이해하고, 이해한 내용을 자신의 것으로 만드는 과정</strong>입니다. AI에 지나치게 의존하면 오히려 실력이 떨어질 수 있으니, 현명하게 활용하여 더 효과적인 학습을 시작해 보세요.</p></div>
+
 <p>AIDogu에서 학습에 도움이 되는 다양한 AI 도구를 비교하고 선택해 보세요.</p>
 `,
 }

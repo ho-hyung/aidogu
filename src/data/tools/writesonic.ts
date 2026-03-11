@@ -15,6 +15,7 @@ export const writesonic: Tool = {
     { name: 'Team', price: '$13/월/인', features: ['팀 협업', 'API 접근'] },
   ],
   url: 'https://writesonic.com',
+  affiliateUrl: 'https://writesonic.com?ref=aidogu',
   screenshots: [],
   pros: [
     'SEO 최적화 블로그 글 생성',

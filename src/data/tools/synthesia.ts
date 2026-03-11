@@ -15,6 +15,7 @@ export const synthesia: Tool = {
     { name: 'Enterprise', price: '문의', features: ['무제한 영상', '전용 아바타', 'API 접근', 'SSO'] },
   ],
   url: 'https://www.synthesia.io',
+  affiliateUrl: 'https://www.synthesia.io?ref=aidogu',
   screenshots: [],
   pros: [
     '기업 교육/온보딩 영상 제작에 최적화',

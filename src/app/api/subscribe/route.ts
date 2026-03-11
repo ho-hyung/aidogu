@@ -29,12 +29,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true })
   }
 
-  if (res.status === 400) {
-    const isDuplicate = JSON.stringify(body).includes('already')
-    if (isDuplicate) {
+  if (res.status === 400 || res.status === 422) {
+    const bodyStr = JSON.stringify(body)
+    if (bodyStr.includes('already') || bodyStr.includes('duplicate')) {
       return NextResponse.json({ error: '이미 구독 중인 이메일입니다.' }, { status: 400 })
     }
-    return NextResponse.json({ error: '유효한 이메일을 입력해주세요.' }, { status: 400 })
+    return NextResponse.json({ error: `입력 오류: ${bodyStr}` }, { status: 400 })
   }
 
   if (res.status === 401) {
@@ -42,5 +42,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: '서버 설정 오류입니다.' }, { status: 500 })
   }
 
-  return NextResponse.json({ error: `구독 처리 중 오류가 발생했습니다. (${res.status})` }, { status: 500 })
+  return NextResponse.json({ error: `오류 (${res.status}): ${JSON.stringify(body)}` }, { status: 500 })
 }

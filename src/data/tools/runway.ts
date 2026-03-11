@@ -15,6 +15,7 @@ export const runway: Tool = {
     { name: 'Pro', price: '$28/월', features: ['월 2,250 크레딧', '4K 해상도'] },
   ],
   url: 'https://runwayml.com',
+  affiliateUrl: 'https://runwayml.com?ref=aidogu',
   screenshots: [],
   pros: [
     'AI 영상 생성 품질이 업계 최고 수준',

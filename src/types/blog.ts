@@ -5,6 +5,7 @@ export interface BlogPost {
   readonly content: string
   readonly category: string
   readonly tags: readonly string[]
+  readonly relatedTools: readonly string[]
   readonly publishedAt: string
   readonly updatedAt: string
 }
